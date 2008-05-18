@@ -21,7 +21,7 @@ class Competition(models.Model):
         """
         Get the list of the competitors of this competition
         """
-        return Competitor.objects.filter(competition=self.id)
+        return Competitor.objects.filter(competition=self.id).order_by('rank')
 
     class Admin:
         pass

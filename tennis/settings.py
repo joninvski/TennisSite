@@ -4,7 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+    ('Joao Trindade', 'trindade.joao@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -64,7 +64,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates".
     # Always use forward slashes, even on Windows.
 
-    '/home/tennis/templates'
+    '/home/tennis/templates',
 )
 
 INSTALLED_APPS = (
