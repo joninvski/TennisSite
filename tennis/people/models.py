@@ -34,9 +34,10 @@ class Competitor(models.Model):
     gamesWon = models.IntegerField()
     gamesTied = models.IntegerField()
     gamesLost = models.IntegerField()
+    person = models.ForeignKey(Student)
 
     class Admin:
         pass
 
     def __str__(self):
-        return "Jogados: %d Victorias: %d Empates: %d Derrotas: %d" % ( self.gamesPlayed, self.gamesWon, self.gamesTied, self.gamesLost)
+        return "%s -> Jogados: %d Victorias: %d Empates: %d Derrotas: %d" % ( self.person, self.gamesPlayed, self.gamesWon, self.gamesTied, self.gamesLost)

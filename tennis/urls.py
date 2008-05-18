@@ -3,8 +3,12 @@ from django.conf.urls.defaults import *
 urlpatterns = patterns('',
     # Example:
     # (r'^tennis/', include('tennis.apps.foo.urls.foo')),
+    (r'^$', 'tennis.webpage.views.get_home'),
+    (r'^services/$', 'tennis.webpage.views.get_services'),
+    (r'^contacts/$', 'tennis.webpage.views.get_contacts'),
     (r'^people/', 'tennis.people.views.student_list'),
-    (r'^competition/tournament/(?P<tournament_id>.*)$', 'tennis.competition.views.get_competition'),
+    (r'^competition/$', 'tennis.competition.views.get_all_competitions'),
+    (r'^competition/(?P<tournament_id>\d+)/$', 'tennis.competition.views.get_competition'),
 
 
     # Uncomment this for admin:
@@ -12,5 +16,4 @@ urlpatterns = patterns('',
 
     #static
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '/home/tennis/media'}),
-
 )
