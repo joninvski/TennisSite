@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
 {% block content_title %}
-    Ranking do torneio {{ tournament.name }}
+    Ranking do torneio {{ competition.name }}
 {% endblock %}
 
 {% block content %}
 
-    {% for competitor in tournament.competitors.all %}
+    {% for competitor in competitors_list %}
         {{ competitor }} <br/>
     {% endfor %}
 

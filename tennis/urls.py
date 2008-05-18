@@ -8,7 +8,7 @@ urlpatterns = patterns('',
     (r'^contacts/$', 'tennis.webpage.views.get_contacts'),
     (r'^people/', 'tennis.people.views.student_list'),
     (r'^competition/$', 'tennis.competition.views.get_all_competitions'),
-    (r'^competition/(?P<tournament_id>\d+)/$', 'tennis.competition.views.get_competition'),
+    (r'^competition/(?P<competition_id>\d+)/$', 'tennis.competition.views.get_competition'),
 
 
     # Uncomment this for admin:
