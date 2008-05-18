@@ -4,6 +4,7 @@ urlpatterns = patterns('',
     # Example:
     # (r'^tennis/', include('tennis.apps.foo.urls.foo')),
     (r'^people/', 'tennis.people.views.student_list'),
+    (r'^competitiona/tournament/(?P<tournament_id>.*)$', 'tennis.competition.views.get_competition'),
 
 
     # Uncomment this for admin:
