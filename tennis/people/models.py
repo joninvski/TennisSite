@@ -1,5 +1,4 @@
 from django.db import models
-from tennis.competition.models import *
 
 import datetime
 
@@ -24,24 +23,3 @@ class Student(models.Model):
         """
         TODAY = datetime.date.today()
         return u"%s" % dateutil.relativedelta(TODAY, self.birthday).years
-
-class Competitor(models.Model):
-    """Defines a competitor in a tennis competition"""
-    gamesPlayed = models.IntegerField()
-    gamesWon = models.IntegerField()
-    gamesTied = models.IntegerField()
-    gamesLost = models.IntegerField()
-    person = models.ForeignKey(Student)
-    competition = models.ForeignKey(Competition)
-
-    class Admin:
-        pass
-
-    def __str__(self):
-        return "%s -> Jogados: %d Victorias: %d Empates: %d Derrotas: %d" % ( self.person, self.gamesPlayed, self.gamesWon, self.gamesTied, self.gamesLost)
-
-    def get_competition_competitor(comp):
-        """
-        Gets the competitors given a competition
-        """
-        Competitor.objects.filter(competition=comp)
