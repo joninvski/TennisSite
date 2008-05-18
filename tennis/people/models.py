@@ -7,6 +7,7 @@ class Student(models.Model):
     """A student of the tennis school"""
     name = models.CharField(maxlength=100)
     birthday = models.DateField()
+    gender = models.BooleanField()
     email = models.EmailField(blank='true')
     phoneNumber = models.CharField(maxlength=14, blank='true')
 
