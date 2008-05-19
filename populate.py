@@ -129,10 +129,12 @@ guerraComp.save()
 
 matchA = SingleMatch()
 matchA.date = datetime.date(2005, 12, 12)
+matchA.competition = escada
 matchA.save()
 
 matchB = SingleMatch()
 matchB.date = datetime.date(2003, 12, 12)
+matchB.competition = escada
 matchB.save()
 
 ##############################################

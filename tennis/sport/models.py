@@ -6,6 +6,7 @@ from tennis.competition.models import *
 class SingleMatch(models.Model):
     """A tennis match"""
     date = models.DateField()
+    competition = models.ForeignKey(Competition)
 
     class Admin:
         pass
@@ -16,8 +17,20 @@ class SingleMatch(models.Model):
         """
         return SetResult.objects.filter(match=self.id).order_by('order')
 
+    def get_results_by_competitor(self, competitor):
+        """
+        Gets the results of a competitor for a match
+        """
+        return SetResult.objects.filter(match=self.id, competitor=competitor.id).order_by('order')
+
     def __str__(self):
         return "Partida %s -> %s" % (self.date, self.get_results())
+
+    def get_winner(self, competitor):
+        """
+        Gets the results of a competitor for a match
+        """
+        return SetResult.objects.filter(match=self.id, competitor=competitor.id).order_by('order')
 
     def get_participants(self):
         """
@@ -31,6 +44,9 @@ class SingleMatch(models.Model):
 
         return set(participants)
 
+    def __str__(self):
+        return "Partida %s -> %s" % (self.date, self.get_results())
+
 class SetResult(models.Model):
         """Represents a Set game"""
         order = models.IntegerField()
@@ -42,4 +58,4 @@ class SetResult(models.Model):
             pass
 
         def __str__(self):
-            return "%s" % (self.games)
+            return "Set number %s: %s" % (self.order, self.games)
