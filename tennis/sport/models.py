@@ -15,13 +15,13 @@ class SingleMatch(models.Model):
         """
         Gets the results for a match
         """
-        return SetResult.objects.filter(match=self.id).order_by('order')
+        return SetResult.objects.filter(match=self.id).order_by('order', 'competitor')
 
     def get_results_by_competitor(self, competitor):
         """
         Gets the results of a competitor for a match
         """
-        return SetResult.objects.filter(match=self.id, competitor=competitor.id).order_by('order')
+        return SetResult.objects.filter(match=self.id, competitor=competitor.id).order_by('order', 'competitor')
 
     def __str__(self):
         return "Partida %s -> %s" % (self.date, self.get_results())
@@ -30,7 +30,7 @@ class SingleMatch(models.Model):
         """
         Gets the results of a competitor for a match
         """
-        return SetResult.objects.filter(match=self.id, competitor=competitor.id).order_by('order')
+        return SetResult.objects.filter(match=self.id, competitor=competitor.id).order_by('order', 'competitor')
 
     def get_participants(self):
         """
