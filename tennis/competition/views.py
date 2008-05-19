@@ -17,7 +17,7 @@ def get_competition(request, competition_id):
         'competitors_list': competitors_list,
         })
 
-def get_all_competitions(none):
+def get_all_competitions(request):
     """Gets all competitions"""
 
     all = Competition.objects.all()

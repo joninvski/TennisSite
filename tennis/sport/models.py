@@ -15,13 +15,13 @@ class SingleMatch(models.Model):
         """
         Gets the results for a match
         """
-        return SetResult.objects.filter(match=self.id).order_by('order', 'competitor')
+        return SetResult.objects.filter(match=self.id)
 
     def get_results_by_competitor(self, competitor):
         """
         Gets the results of a competitor for a match
         """
-        return SetResult.objects.filter(match=self.id, competitor=competitor.id).order_by('order', 'competitor')
+        return SetResult.objects.filter(match=self.id, competitor=competitor.id)
 
     def __str__(self):
         return "Partida %s -> %s" % (self.date, self.get_results())
@@ -30,7 +30,7 @@ class SingleMatch(models.Model):
         """
         Gets the results of a competitor for a match
         """
-        return SetResult.objects.filter(match=self.id, competitor=competitor.id).order_by('order', 'competitor')
+        return SetResult.objects.filter(match=self.id, competitor=competitor.id)
 
     def get_participants(self):
         """
@@ -47,15 +47,19 @@ class SingleMatch(models.Model):
     def __str__(self):
         return "Partida %s -> %s" % (self.date, self.get_results())
 
+
 class SetResult(models.Model):
-        """Represents a Set game"""
-        order = models.IntegerField()
-        match = models.ForeignKey(SingleMatch)
-        games = models.IntegerField()
-        competitor = models.ForeignKey(Competitor)
+    """Represents a Set game"""
+    order = models.IntegerField()
+    match = models.ForeignKey(SingleMatch)
+    games = models.IntegerField()
+    competitor = models.ForeignKey(Competitor)
 
-        class Admin:
-            pass
+    class Admin:
+        pass
 
-        def __str__(self):
-            return "Set number %s: %s" % (self.order, self.games)
+    class Meta:
+        ordering = ['order', 'competitor']
+
+    def __str__(self):
+        return "%s Set number %s: %s" % (self.competitor.person.name, self.order, self.games)

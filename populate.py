@@ -133,7 +133,7 @@ matchA.competition = escada
 matchA.save()
 
 matchB = SingleMatch()
-matchB.date = datetime.date(2003, 12, 12)
+matchB.date = datetime.date(2003, 1, 2)
 matchB.competition = escada
 matchB.save()
 
@@ -153,3 +153,58 @@ setResultA2.games = 3
 setResultA2.competitor = guerraComp
 setResultA2.save()
 
+setResultA3 = SetResult()
+setResultA3.order = 2
+setResultA3.match = matchA
+setResultA3.games = 5
+setResultA3.competitor = joaoComp
+setResultA3.save()
+
+setResultA5 = SetResult()
+setResultA5.order = 3
+setResultA5.match = matchA
+setResultA5.games = 7
+setResultA5.competitor = joaoComp
+setResultA5.save()
+
+setResultA4 = SetResult()
+setResultA4.order = 2
+setResultA4.match = matchA
+setResultA4.games = 7
+setResultA4.competitor = guerraComp
+setResultA4.save()
+
+setResultA6 = SetResult()
+setResultA6.order = 3
+setResultA6.match = matchA
+setResultA6.games = 5
+setResultA6.competitor = guerraComp
+setResultA6.save()
+
+setResultB1 = SetResult()
+setResultB1.order = 1
+setResultB1.match = matchB
+setResultB1.games = 1
+setResultB1.competitor = guerraComp
+setResultB1.save()
+
+setResultB2 = SetResult()
+setResultB2.order = 1
+setResultB2.match = matchB
+setResultB2.games = 6
+setResultB2.competitor = joaoComp
+setResultB2.save()
+
+setResultB3 = SetResult()
+setResultB3.order = 2
+setResultB3.match = matchB
+setResultB3.games = 4
+setResultB3.competitor = guerraComp
+setResultB3.save()
+
+setResultB4 = SetResult()
+setResultB4.order = 2
+setResultB4.match = matchB
+setResultB4.games = 6
+setResultB4.competitor = joaoComp
+setResultB4.save()
