@@ -32,7 +32,7 @@ class Competitor(models.Model):
     gamesWon = models.IntegerField()
     gamesTied = models.IntegerField()
     gamesLost = models.IntegerField()
-    person = models.ForeignKey(Student)
+    person = models.ForeignKey(Person)
     competition = models.ForeignKey(Competition)
     rank = models.IntegerField()
 

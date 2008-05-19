@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block content_title %}
-    Listagem de todos os atletas
+    Listagem de todos os atletas da escola
 {% endblock %}
 
 {% block content %}
 
-    {% for student in all_students %}
-        {{ student }} {{ student.manel }} <br/>
+    {% for student in all_school_students %}
+        {{ student }} <br/>
     {% endfor %}
 
 {% endblock %}
