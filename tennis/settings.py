@@ -75,4 +75,5 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'tennis.people',
     'tennis.competition',
+    'tennis.sport',
 )
