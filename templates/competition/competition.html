@@ -10,4 +10,18 @@
         {{ competitor }} <br/>
     {% endfor %}
 
+    <h3>Todos os Jogos</h3>
+
+    {% for match in competition.get_matches %}
+    <h5>Jogo</h5>
+        {{ match.competitorA.person.name }} contra
+        {{ match.competitorB.person.name }}
+        <a href="match/{{match.id}}">Detalhes</a>
+
+<!--        {% for result in match.get_results %} -->
+<!--            {{ result.games }}-->
+<!--        {% endfor %}-->
+    <br/>
+    {% endfor %}
+
 {% endblock %}

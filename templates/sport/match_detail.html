@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content_title %}
+    Jogo em {{ match.date }}
+{% endblock %}
+
+{% block content %}
+{{ match.competitorA.person.name }} 
+
+{% for result in competitorAresult %}
+{{ result.games }}
+{% endfor %}
+
+<br/>
+{{ match.competitorB.person.name }} 
+{% for result in competitorBresult %}
+{{ result.games }}
+{% endfor %}
+{% endblock %}

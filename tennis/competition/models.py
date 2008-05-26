@@ -23,6 +23,12 @@ class Competition(models.Model):
         """
         return Competitor.objects.filter(competition=self.id).order_by('rank')
 
+    def get_matches(self):
+        """
+        Gets the matches that ocurred in this tournament
+        """
+        return SingleMatch.objects.filter(competition=self.id)
+
     class Admin:
         pass
 
@@ -41,3 +47,6 @@ class Competitor(models.Model):
 
     def __str__(self):
         return "%d. %s -> Jogados: %d Victorias: %d Empates: %d Derrotas: %d" % ( self.rank, self.person, self.gamesPlayed, self.gamesWon, self.gamesTied, self.gamesLost)
+
+
+from tennis.sport.models import *

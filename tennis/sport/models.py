@@ -1,5 +1,5 @@
 from django.db import models
-from tennis.competition.models import *
+from tennis.competition.models import Competition, Competitor
 
 # Create your models here.
 
@@ -7,6 +7,8 @@ class SingleMatch(models.Model):
     """A tennis match"""
     date = models.DateField()
     competition = models.ForeignKey(Competition)
+    competitorA = models.ForeignKey(Competitor, related_name="competitorA")
+    competitorB = models.ForeignKey(Competitor, related_name="competitorB")
 
     class Admin:
         pass
@@ -24,29 +26,19 @@ class SingleMatch(models.Model):
         return SetResult.objects.filter(match=self.id, competitor=competitor.id)
 
     def __str__(self):
-        return "Partida %s -> %s" % (self.date, self.get_results())
+        a = self.get_results()
+
+        b = ""
+        for result in a:
+            b + result.__str__()
+
+        return b # "Partida %s -> %s" % (self.date, self.get_results())
 
     def get_winner(self, competitor):
         """
         Gets the results of a competitor for a match
         """
         return SetResult.objects.filter(match=self.id, competitor=competitor.id)
-
-    def get_participants(self):
-        """
-        Gets the participants of a match
-        """
-        results = self.get_results()
-
-        participants = []
-        for result in results:
-            participants.append(result.competitor)
-
-        return set(participants)
-
-    def __str__(self):
-        return "Partida %s -> %s" % (self.date, self.get_results())
-
 
 class SetResult(models.Model):
     """Represents a Set game"""
@@ -59,7 +51,9 @@ class SetResult(models.Model):
         pass
 
     class Meta:
-        ordering = ['order', 'competitor']
+        ordering = ['competitor', 'order']
 
     def __str__(self):
         return "%s Set number %s: %s" % (self.competitor.person.name, self.order, self.games)
+
+

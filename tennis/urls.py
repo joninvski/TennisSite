@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     (r'^people/', 'tennis.people.views.get_school_student_list'),
     (r'^competition/$', 'tennis.competition.views.get_all_competitions'),
     (r'^competition/(?P<competition_id>\d+)/$', 'tennis.competition.views.get_competition'),
+    (r'^competition/(?P<competition_id>\d+)/match/(?P<match_id>\d+)/$', 'tennis.sport.views.get_match_details'),
 
 
     # Uncomment this for admin:
