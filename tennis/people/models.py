@@ -10,11 +10,11 @@ GENDER_CHOICES = (
 # Create your models here.
 class Person(models.Model):
     """A student of the tennis school"""
-    name = models.CharField(maxlength=100)
+    name = models.CharField(max_length=100)
     birthday = models.DateField()
-    gender = models.CharField(maxlength=1, choices=GENDER_CHOICES)
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     email = models.EmailField(blank='true')
-    phoneNumber = models.CharField(maxlength=14, blank='true')
+    phoneNumber = models.CharField(max_length=14, blank='true')
 
     class Admin:
         pass
@@ -36,9 +36,9 @@ class SchoolStudent(models.Model):
     """An outside student of the school (like Desporto escular) """
     person = models.OneToOneField(Person)
     number = models.IntegerField()
-    
+
     class Admin:
         pass
 
     def __str__(self):
-        return "Aluno %s: %s" % (self.number, self.person) 
+        return "Aluno %s: %s" % (self.number, self.person)

@@ -55,5 +55,3 @@ class SetResult(models.Model):
 
     def __str__(self):
         return "%s Set number %s: %s" % (self.competitor.person.name, self.order, self.games)
-
-

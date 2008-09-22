@@ -76,4 +76,5 @@ INSTALLED_APPS = (
     'tennis.people',
     'tennis.competition',
     'tennis.sport',
+    'tennis.organizations',
 )

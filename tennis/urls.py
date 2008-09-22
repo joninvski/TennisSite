@@ -1,5 +1,9 @@
 from django.conf.urls.defaults import *
 
+# Uncomment the next two lines to enable the admin:
+from django.contrib import admin
+admin.autodiscover()
+
 urlpatterns = patterns('',
     # Example:
     # (r'^tennis/', include('tennis.apps.foo.urls.foo')),
@@ -13,7 +17,11 @@ urlpatterns = patterns('',
 
 
     # Uncomment this for admin:
-    (r'^admin/', include('django.contrib.admin.urls')),
+    (r'^admin/(.*)', admin.site.root),
+
+
+    # Uncomment this for admin:
+#    (r'^admin/', include('django.contrib.admin.urls')),
 
     #static
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '/home/tennis/media'}),
