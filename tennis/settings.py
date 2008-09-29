@@ -29,11 +29,12 @@ SITE_ID = 1
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = '/tmp/'
+MEDIA_ROOT = '/home/workspace/tennis/media/'
 
 # URL that handles the media served from MEDIA_ROOT.
 # Example: "http://media.lawrence.com"
-MEDIA_URL = 'http://sportflow.no-ip.org'
+#MEDIA_URL = 'http://sportflow.no-ip.org'
+MEDIA_URL = 'http://127.0.0.1:8000'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.

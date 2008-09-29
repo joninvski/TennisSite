@@ -5,9 +5,15 @@
 {% endblock %}
 
 {% block content %}
-
-    {% for student in all_school_students %}
-        {{ student }} <br/>
+    <h3> Alunos da Sportsflow:</h3>
+    {% for student in all_club_students %}
+       <a href="/people/{{ student.person.id }}">{{ student.person.name }}</a> <br/>
     {% endfor %}
+ 
+    <h3>Alunos de Desporto Escolar:</h3>
+    {% for student in all_school_students %}
+       <a href="/people/{{ student.person.id }}">{{ student.person.name }}</a> <br/>
+    {% endfor %}
+
 
 {% endblock %}

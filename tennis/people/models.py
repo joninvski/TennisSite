@@ -1,3 +1,5 @@
+# -*- coding: latin-1 -*-
+
 from django.db import models
 
 import datetime
@@ -15,12 +17,15 @@ class Person(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     email = models.EmailField(blank='true')
     phoneNumber = models.CharField(max_length=14, blank='true')
+    height = models.IntegerField(blank='true')
+    weight = models.IntegerField(blank='true')
+    photo = models.ImageField(upload_to='photos/')
 
     class Admin:
         pass
 
-    def __str__(self):
-        return "%s" % (self.name)
+    def __unicode__(self):
+        return u"%s" % (self.name)
 
 class ClubStudent(models.Model):
     """A student of the club """
@@ -29,8 +34,8 @@ class ClubStudent(models.Model):
     class Admin:
         pass
 
-    def __str__(self):
-        return "Membro: " % (self.person)
+    def __unicode__(self):
+        return u"Sócio: %s" % (self.person)
 
 class SchoolStudent(models.Model):
     """An outside student of the school (like Desporto escular) """
@@ -40,5 +45,5 @@ class SchoolStudent(models.Model):
     class Admin:
         pass
 
-    def __str__(self):
-        return "Aluno %s: %s" % (self.number, self.person)
+    def __unicode__(self):
+        return u"Aluno %s: %s" % (self.number, self.person)

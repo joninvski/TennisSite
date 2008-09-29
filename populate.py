@@ -31,6 +31,8 @@ joao.birthday = datetime.date(2005, 12, 12)
 joao.gender = 'M'
 joao.email = 'trindade.joao@gmail.com'
 joao.phoneNumber = '935613910'
+joao.height = 32
+joao.weight = 123
 joao.save()
 
 guerra = Person()
@@ -39,6 +41,8 @@ guerra.birthday = datetime.date(1995, 12, 12)
 guerra.gender = 'M'
 guerra.email = 'guerra@gmail.com'
 guerra.phoneNumber = '932222222'
+guerra.height = 32
+guerra.weight = 123
 guerra.save()
 
 guido = Person()
@@ -47,6 +51,8 @@ guido.birthday = datetime.date(2002, 07, 22)
 guido.gender = 'M'
 guido.email = 'guido@gmail.com'
 guido.phoneNumber = '932222190'
+guido.height = 32
+guido.weight = 123
 guido.save()
 
 manel = Person()
@@ -55,6 +61,8 @@ manel.birthday = datetime.date(2001, 11, 12)
 manel.gender = 'M'
 manel.email = 'manelEsteves@gmail.com'
 manel.phoneNumber = '931021292'
+manel.height = 32
+manel.weight = 123
 manel.save()
 
 joaquina = Person()
@@ -63,6 +71,8 @@ joaquina.birthday = datetime.date(1981, 01, 22)
 joaquina.gender = 'F'
 joaquina.email = 'jakina@gmail.com'
 joaquina.phoneNumber = '913131291'
+joaquina.height = 32
+joaquina.weight = 123
 joaquina.save()
 
 ##############################################
