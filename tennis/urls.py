@@ -10,11 +10,16 @@ urlpatterns = patterns('',
     (r'^$', 'tennis.webpage.views.get_home'),
     (r'^services/$', 'tennis.webpage.views.get_services'),
     (r'^contacts/$', 'tennis.webpage.views.get_contacts'),
+
     (r'^people/$', 'tennis.people.views.get_students_list'),
     (r'^people/(?P<person_id>\d+)/$', 'tennis.people.views.get_person'),
+
     (r'^competition/$', 'tennis.competition.views.get_all_competitions'),
     (r'^competition/(?P<competition_id>\d+)/$', 'tennis.competition.views.get_competition'),
     (r'^competition/(?P<competition_id>\d+)/match/(?P<match_id>\d+)/$', 'tennis.sport.views.get_match_details'),
+
+    (r'^organization/$', 'tennis.organizations.views.get_all_organizations'),
+    (r'^organization/(?P<organization_id>\d+)/$', 'tennis.organizations.views.get_organization'),
 
 
     # Uncomment this for admin:
@@ -27,4 +32,5 @@ urlpatterns = patterns('',
     #static
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '/home/tennis/media'}),
     (r'^photos/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '/home/tennis/media/photos'}),
+    (r'^documents/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '/home/tennis/media/documents'}),
 )

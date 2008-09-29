@@ -5,6 +5,7 @@ from django.contrib.flatpages.models import FlatPage
 from tennis.people.models import *
 from tennis.competition.models import *
 from tennis.sport.models import *
+from tennis.organizations.models import *
 
 import datetime
 
@@ -222,3 +223,23 @@ setResultB4.match = matchB
 setResultB4.games = 6
 setResultB4.competitor = joaoComp
 setResultB4.save()
+
+##############################################
+
+cocacola = Company()
+cocacola.name = "Coca-Cola Ltd"
+cocacola.address = "Rua manel da esquina n. 5 dto"
+cocacola.isbn = "13213213231"
+cocacola.save()
+
+pepsi = Company()
+pepsi.name = "Pepsi Ltd"
+pepsi.address = "Rua joaquim esteves n. 5"
+pepsi.isbn = "133952131"
+pepsi.save()
+
+bobadelense = Company()
+bobadelense.name = "Bobadelense"
+bobadelense.address = "Rua da Bobadela n.123 2650-123"
+bobadelense.isbn = "132222222"
+bobadelense.save()
