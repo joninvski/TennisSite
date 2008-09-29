@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content_title %}
+    Listagem de todas as organizacoes parceiras
+{% endblock %}
+
+{% block content %}
+    <h3> {{ organization }} </h3>
+
+    {% if organization.isbn %}
+        ISBN: {{ organization.isbn }}<br/>
+    {% endif %}
+
+    {% if organization.address%}
+        Morada: {{ organization.address }}<br/>
+    {% endif %}
+    
+    <h3>Documentos associados</h3>
+    {% for document in related_documents %}
+        <a href="/{{ document.file }}">{{ document }}</a>
+    {% endfor %}
+
+{% endblock %}

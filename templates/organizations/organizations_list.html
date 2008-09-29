@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content_title %}
+    Listagem de todas as organizacoes parceiras
+{% endblock %}
+
+{% block content %}
+    {% for organization in all_organizations %}
+        <a href="/organization/{{ organization.id }}">{{ organization }}</a> <br/>
+    {% endfor %}
+
+{% endblock %}
