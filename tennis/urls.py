@@ -25,6 +25,6 @@ urlpatterns = patterns('',
 #    (r'^admin/', include('django.contrib.admin.urls')),
 
     #static
-    (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '/home/workspace/tennis/media'}),
-    (r'^photos/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '/home/workspace/tennis/media/photos'}),
+    (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '/home/tennis/media'}),
+    (r'^photos/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '/home/tennis/media/photos'}),
 )

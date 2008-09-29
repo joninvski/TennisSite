@@ -10,7 +10,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'sqlite3'           # 'postgresql', 'mysql', 'sqlite3' or 'ado_mssql'.
-DATABASE_NAME = '/home/workspace/tennis/db'             # Or path to database file if using sqlite3.
+DATABASE_NAME = '/home/tennis/db'             # Or path to database file if using sqlite3.
 DATABASE_USER = ''             # Not used with sqlite3.
 DATABASE_PASSWORD = ''         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
@@ -34,13 +34,13 @@ MEDIA_ROOT = '/home/workspace/tennis/media/'
 # URL that handles the media served from MEDIA_ROOT.
 # Example: "http://media.lawrence.com"
 #MEDIA_URL = 'http://sportflow.no-ip.org'
-MEDIA_URL = 'http://joaotrindade.no-ip.org:1984'
+MEDIA_URL = 'http://127.0.0.1:8000'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = 'http://joaotrindade.no-ip.org:1984/media/'
-#ADMIN_MEDIA_PREFIX = 'http://joaotrindade.no-ip.org:8000/media/'
+ADMIN_MEDIA_PREFIX = 'http://127.0.0.1:8000/media/'
+#ADMIN_MEDIA_PREFIX = 'http://127.0.0.1:8000/media/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '#&1($e8vbvtgs=03+jg*xlt6l84f#l=jrmrsev)5q@h9-*p=%m'
@@ -65,7 +65,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates".
     # Always use forward slashes, even on Windows.
 
-    '/home/workspace/tennis/templates',
+    '/home/tennis/templates',
 )
 
 INSTALLED_APPS = (
