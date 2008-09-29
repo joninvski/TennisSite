@@ -8,18 +8,21 @@
 
     <table>
         <tr>
-        <td>
-            <img width=105 height=97 src="/{{ person.photo }}"/>
-        </td>
-        <td>
-            Nome: {{ person.name }} <br/>
-            Aniversario: {{ person.birthday }} <br/>
-            Sexo: {{ person.gender }} <br/>
-            Email: {{ person.email }} <br/>
-            Numero Telefone: {{ person.phoneNumber }} <br/>
-            Altura: {{ person.height }} <br/>
-            Peso: {{ person.weight }} <br/>
-        </td>
+            {% if person.photo %}
+            <td>
+                <img width=105 height=97 src="/{{ person.photo }}"/>
+            </td>
+            {% endif %}
+
+            <td>
+                Nome: {{ person.name }} <br/>
+                Aniversario: {{ person.birthday }} <br/>
+                Sexo: {{ person.gender }} <br/>
+                Email: {{ person.email }} <br/>
+                Numero Telefone: {{ person.phoneNumber }} <br/>
+                Altura: {{ person.height }} <br/>
+                Peso: {{ person.weight }} <br/>
+            </td>
         <tr>
     </table>
 
